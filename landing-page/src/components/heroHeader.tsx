@@ -1,5 +1,5 @@
 
-export default function Header(props: {
+export default function HeroHeader(props: {
   header: string;
   body: string;
   heroImage: string;
