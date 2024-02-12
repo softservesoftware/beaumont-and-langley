@@ -36,7 +36,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: landing-page-artifact
-          path: lib/ui/landing-page/build/
+          path: lib/build/
 
       - name: install/configure cdk
         run: |
