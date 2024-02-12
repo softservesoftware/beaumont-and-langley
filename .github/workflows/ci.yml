@@ -40,7 +40,6 @@ jobs:
 
       - name: install/configure cdk
         run: |
-          mv landing-page/build aws/
           npm install -g aws-cdk 
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}  --profile default
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile default
@@ -48,6 +47,8 @@ jobs:
               
       - name: deploy backend
         run: |
+          mv landing-page/build aws/
+          cd aws
           npm install
           export STAGE=${GITHUB_REF##*/}
           export AWS_ACCOUNT_ID=${{ secrets.AWS_ACCOUNT_ID }}
