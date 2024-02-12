@@ -70,7 +70,7 @@ export class AwsStack extends Stack {
       this,
       `deployment`,
       {
-        sources: [cdk.aws_s3_deployment.Source.asset("lib/build")],
+        sources: [cdk.aws_s3_deployment.Source.asset("build")],
         destinationBucket: uiBucket,
         distribution: uiDistribution,
         distributionPaths: ["/*"],
