@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: landing-page-artifact
-          path: lib/build
+          path: landing-page/build
           retention-days: 1
 
   Deploy:
@@ -36,10 +36,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: landing-page-artifact
-          path: lib/build/
+          path: landing-page/build
 
       - name: install/configure cdk
         run: |
+          mv landing-page/build aws/
           npm install -g aws-cdk 
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}  --profile default
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile default
