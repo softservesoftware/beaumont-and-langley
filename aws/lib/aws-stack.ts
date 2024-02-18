@@ -16,20 +16,20 @@ export class AwsStack extends Stack {
     super(scope, id, props);
 
     // cert for the domain name
-    const bareCert = new acm.Certificate(this, "Certificate", {
-      domainName: props.domainName,
-      validation: acm.CertificateValidation.fromDns(),
-    });
+    // const bareCert = new acm.Certificate(this, "Certificate", {
+    //   domainName: props.domainName,
+    //   validation: acm.CertificateValidation.fromDns(),
+    // });
 
     // wildcard cert for the domain name
-    // const wildcardCert = new acm.Certificate(
-    //   this,
-    //   "WildcardCertificate",
-    //   {
-    //     domainName: `*.${props.domainName}`,
-    //     validation: acm.CertificateValidation.fromDns(),
-    //   }
-    // );
+    const wildcardCert = new acm.Certificate(
+      this,
+      "WildcardCertificate",
+      {
+        domainName: `*.${props.domainName}`,
+        validation: acm.CertificateValidation.fromDns(),
+      }
+    );
 
     // hosted zone for domain name if domain is managed in r53
     // const zone = route53.HostedZone.fromLookup(this, "Zone", {
@@ -44,8 +44,8 @@ export class AwsStack extends Stack {
       this,
       `distribution`,
       {
-        certificate: bareCert,
-        domainNames: [props.domainName],
+        certificate: wildcardCert,
+        domainNames: [`www.${props.domainName}`],
         defaultBehavior: {
           origin: new cdk.aws_cloudfront_origins.S3Origin(uiBucket),
           viewerProtocolPolicy:
