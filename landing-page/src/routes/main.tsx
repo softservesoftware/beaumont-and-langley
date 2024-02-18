@@ -23,21 +23,7 @@ import HeroHeader from "../components/heroHeader";
 export default function Main() {
   return (
     <>
-      <HeroHeader
-        header={"Catchy Header Goes Here"}
-        body={
-          "Here is some text that describes the header. It can be a little longer if needed. Maybe even two lines. Maybe even talk a bit about your product. Who knows?"
-        }
-        heroImage={hero}
-        mainButton={{
-          text: "Sign Up",
-          href: "#Pricing",
-        }}
-        secondaryButton={{
-          text: "Learn More",
-          href: "#Product",
-        }}
-      />
+      <HeroHeader/>
       <Customers
         customers={[
           {

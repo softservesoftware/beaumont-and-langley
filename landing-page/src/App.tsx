@@ -8,6 +8,7 @@ import {
 import Main from "./routes/main";
 import About from "./routes/about";
 import Nav from "./components/nav";
+import Blank from "./routes/blank";
 
 const navigation = [
   { name: "Product", href: "/#Product" },
@@ -42,14 +43,15 @@ export const footerNavigation = {
 function App() {
   return (
     <>
-      <Nav navigation={navigation}/>
+    <Blank />
+      {/* <Nav navigation={navigation}/>
       <Router>
         <Routes>
           <Route path="/" element={<Main />}  />
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
-      <Footer navigation={footerNavigation} />
+      <Footer navigation={footerNavigation} /> */}
     </>
   );
 }
