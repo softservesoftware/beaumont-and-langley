@@ -1,4 +1,4 @@
-import React from "react";
+
 import blLogo from "../img/blLogo.png";
 
 export default function Blank() {

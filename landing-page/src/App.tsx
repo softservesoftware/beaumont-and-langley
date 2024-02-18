@@ -1,21 +1,21 @@
 import "./App.css";
-import Footer from "./components/footer";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import Main from "./routes/main";
-import About from "./routes/about";
-import Nav from "./components/nav";
+// import Footer from "./components/footer";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
+// import Main from "./routes/main";
+// import About from "./routes/about";
+// import Nav from "./components/nav";
 import Blank from "./routes/blank";
 
-const navigation = [
-  { name: "Product", href: "/#Product" },
-  { name: "Features", href: "/#Features" },
-  { name: "Pricing", href: "/#Pricing" },
-  { name: "About", href: "/about" },
-];
+// const navigation = [
+//   { name: "Product", href: "/#Product" },
+//   { name: "Features", href: "/#Features" },
+//   { name: "Pricing", href: "/#Pricing" },
+//   { name: "About", href: "/about" },
+// ];
 
 export const footerNavigation = {
   solutions: [

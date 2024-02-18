@@ -18,7 +18,7 @@ import ProductOverview from "../components/productOverview";
 import Stats from "../components/stats";
 import Testimonial from "../components/testimonial";
 import UseCases from "../components/useCases";
-import hero from "../img/hero.png";
+// import hero from "../img/hero.png";
 import HeroHeader from "../components/heroHeader";
 export default function Main() {
   return (
